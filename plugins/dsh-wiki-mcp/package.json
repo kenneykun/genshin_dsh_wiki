@@ -1,0 +1,21 @@
+{
+  "name": "@local/genshin-wiki-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "把本地原神观测枢资料库（13,936 条词条）接入 Harness 的 MCP 连接",
+  "exports": {
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

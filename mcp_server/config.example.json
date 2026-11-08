@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "genshin-wiki": {
+      "command": "<项目根目录>\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "mcp_server.server"],
+      "cwd": "<项目根目录>"
+    }
+  }
+}

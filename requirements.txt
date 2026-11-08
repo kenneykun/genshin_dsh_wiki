@@ -1,0 +1,13 @@
+# 主采集链路：观测枢双通道 JSON API（无需浏览器）
+httpx>=0.27.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+tenacity>=8.0.0
+loguru>=0.7.0
+tqdm>=4.66.0
+
+# MCP 服务器（可选：把资料库接到其他 AI 客户端时才需要）
+mcp>=2.0.0
+
+# 可选：旧版 Playwright 渲染链路（仅 src/downloader.py 使用，主流程已不需要）
+# playwright>=1.40.0

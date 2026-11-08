@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>观测枢 · 本地资料库</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%E2%97%88%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn only-mobile" id="menuBtn" aria-label="展开分类">☰</button>
+    <a class="brand" href="#/">
+      <span class="brand-mark">◈</span>
+      <span class="brand-text"><b>观测枢</b><small>LOCAL ARCHIVE</small></span>
+    </a>
+
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+      <input id="searchInput" class="search-input" type="search" placeholder="搜索条目或正文…" autocomplete="off" spellcheck="false" aria-label="搜索">
+      <kbd class="search-kbd">Ctrl K</kbd>
+      <div id="searchPanel" class="search-panel" hidden></div>
+    </div>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="fontMinus" title="字号变小">A−</button>
+      <button class="icon-btn" id="fontPlus" title="字号变大">A+</button>
+      <button class="icon-btn" id="themeBtn" title="切换深浅色">◐</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="side-head">
+        <h2>分类</h2>
+        <button class="icon-btn only-mobile" id="sideClose" aria-label="收起">✕</button>
+      </div>
+      <ul id="catList" class="cat-list"></ul>
+      <div class="side-stats" id="sideStats"></div>
+    </aside>
+    <main class="content" id="main"></main>
+  </div>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <div class="toast" id="toast" hidden></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

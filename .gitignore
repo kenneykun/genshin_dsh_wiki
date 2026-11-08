@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 抓取数据（体积大，按 README 重新采集或使用自己的数据）
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# 日志与临时文件
+logs/
+*.log
+_web.log
+_test_*.html
+_*.json
+_*.txt
+_tmp/
+
+# 本地配置（可能包含 API Key）
+data/llm_config.json
+.credentials.yaml
+.env
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

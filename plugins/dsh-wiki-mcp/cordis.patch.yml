@@ -1,0 +1,12 @@
+- insert:
+    - id: genshin-wiki-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: genshin-wiki
+        transport: stdio
+        command: 'E:\aki\yuanshen_wiki\.venv\Scripts\python.exe'
+        args:
+          - '-m'
+          - 'mcp_server.server'
+        cwd: 'E:\aki\yuanshen_wiki'
+        failOnStartupError: true
