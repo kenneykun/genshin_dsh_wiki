@@ -1,6 +1,32 @@
-# yuanshen_wiki
+# yuanshen_wiki · genshin_dsh_wiki
 
-> 原神观测枢 Wiki 本地爬虫 —— 爬取全部游戏文本数据，服务于二创考据
+> 原神观测枢 Wiki 本地资料库：API 采集 → 全文检索 → 笔记式前端 → MCP 插件 → AI 梗概 / 探索式笔记
+
+仓库：https://github.com/kenneykun/genshin_dsh_wiki
+
+## 快速开始
+
+```bash
+git clone https://github.com/kenneykun/genshin_dsh_wiki.git
+cd genshin_dsh_wiki
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+
+.venv\Scripts\python.exe -m src.crawl_api            # 采集全站（约 5 分钟，8 并发）
+.venv\Scripts\python.exe -m web.build_db             # 建检索索引（约 12 秒）
+.venv\Scripts\python.exe -m src.build_graph          # 建关联图谱（约 10 秒）
+.venv\Scripts\python.exe -m web.server --open        # 打开网页（默认 8321 端口）
+```
+
+> **数据不入库**：`data/`（约 300 MB 的 JSON、正文、SQLite 索引）与 `.venv/` 已在 `.gitignore` 中排除，克隆后按上面四步自行采集即可。`web/static/covers/` 中的封面 PNG 随仓库提供，重跑 `src.make_covers` 可再生成。
+
+可选的 AI 能力需要 DeepSeek 凭据（详见后文「资料库助手」）：
+
+```bash
+.venv\Scripts\python.exe -m src.gen_notes -l 100 --workers 10      # 批量梗概卡
+.venv\Scripts\python.exe -m src.explore_notes -n 20 --agents 4     # 探索式笔记
+.venv\Scripts\python.exe -m src.make_covers --explore -l 20        # 生成封面
+```
 
 ## 项目定位
 
